@@ -1,0 +1,32 @@
+﻿@model Book
+
+<div>
+    <h1>Kitap Düzenle</h1>
+
+    <div>
+        <form method="post" asp-controller="Book" asp-action="Edit">
+            <input type="hidden" name="BookId" value="@Model.BookId" />
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" value="@Model.Title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author"></label>
+                <textarea asp-for="Author" class="form-control">@Model.Author</textarea>
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control">@Model.Description</textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl" class="form-control" value="@Model.ImageUrl" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+        </form>
+    </div>
+</div>
